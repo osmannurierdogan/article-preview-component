@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background-color: #ecf2f8;
+}
+
+.container {
+  min-width: 80rem;
+  width: 100rem;
+  max-width: 120rem;
+  margin: 5% auto;
+}
+
+.article {
+  width: 75%;
+  margin-inline: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
+  border-radius: 1.2rem;
+  -webkit-box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+          box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.article__image {
+  background-image: url(../images/drawers.jpg);
+  background-position: center;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article__content {
+  background-color: white;
+  padding: 3rem 4rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.8rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.article__content__title {
+  color: #48556a;
+  font-weight: 700;
+}
+
+.article__content__preview {
+  color: #6d7f97;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.article__content__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.7;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.article__content__footer__author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 1.4rem;
+}
+
+.article__content__footer__author__image {
+  border-radius: 50%;
+  width: 4.5rem;
+}
+
+.article__content__footer__author__name {
+  color: #48556a;
+}
+
+.article__content__footer__author__date {
+  color: #6d7f97;
+}
+
+.article__content__share {
+  background-color: #ecf2f8;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.article__content__share:hover {
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
