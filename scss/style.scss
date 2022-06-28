@@ -18,39 +18,72 @@ $color-white: hsl(0, 0%, 100%);
 html {
 	font-size: 62.5%;
 	font-family: $font-family-heading;
+	@media only screen and (max-width: $mobile-breakpoint) {
+		font-size: 50%;
+	}
 }
 body {
 	background-color: $color-light-grayish-blue;
+	overflow-x: hidden;
+	width: 100vw;
+	height: 100vh;
 }
 .container {
-	min-width: 80rem;
+	//min-width: 80rem;
 	width: 100rem;
 	max-width: 120rem;
-	margin: 5% auto;
+	//margin: 5% auto;
+	@media only screen and (max-width: $mobile-breakpoint) {
+    width: 100%;
+		padding: 2rem;
+	}
 }
 
 .article {
-	width: 75%;
+	width: 50%;
 	margin-inline: auto;
 	display: grid;
 	grid-template-columns: 2fr 3fr;
-  border-radius: 1.2rem;
-  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+	border-radius: 1.2rem;
+	box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@media only screen and (max-width: $mobile-breakpoint) {
+		width: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+		position: absolute;
+		top: initial;
+		left: initial;
+		transform: translate(0%, 0%);
+	}
 	&__image {
-    background-image: url(../images/drawers.jpg);
+		background-image: url(../images/drawers.jpg);
 		background-position: center;
 		background-size: cover;
 		object-fit: cover;
+		grid-column: 1 / 2;
+		@media only screen and (max-width: $mobile-breakpoint) {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
 	}
 	&__content {
+		grid-column: 2 / 3;
 		background-color: $color-white;
 		padding: 3rem 4rem;
 		line-height: 1.4;
 		display: flex;
-		gap: 1.8rem;
 		justify-content: space-between;
 		flex-direction: column;
+		gap: 1.8rem;
+		@media only screen and (max-width: $mobile-breakpoint) {
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+		}
 		&__title {
 			color: $color-very-dark-grayish-blue;
 			font-weight: $font-weight-700;
@@ -58,13 +91,17 @@ body {
 		&__preview {
 			color: $color-desaturated-dark-blue;
 			font-size: $font-size;
-      line-height: 1.6;
+			line-height: 1.6;
 		}
 		&__footer {
 			display: flex;
 			align-items: center;
-      line-height: 1.7;
+			line-height: 1.7;
 			justify-content: space-between;
+			@media only screen and (max-width: $mobile-breakpoint) {
+				font-size: 120%;
+				margin-top: 2rem;
+			}
 			&__author {
 				display: flex;
 				align-items: center;
@@ -92,6 +129,18 @@ body {
 		}
 	}
 }
+/* .message-box{
+  background-color: $color-very-dark-grayish-blue;
+  text-align: center;
+  width: 10%;
+  height: 3rem;
+  margin-left: 10rem;
+  border-radius: 1rem;
+  border: 1px solid red;
+  display: inline-block;
+  display: none;
+  //clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0% 85%);
+} */
 
 .attribution {
 	font-size: 1.1rem;
